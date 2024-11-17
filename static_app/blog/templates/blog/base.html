@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Static App</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/normalize.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="{% url 'index' %}">Index</a></li>
+                <li><a href="{% url 'create' %}">New Blog</a></li>
+            </ul>
+        </header>
+        <div class="main">
+            {% block content_block %}
+            {% endblock %}
+        </div>
+        <footer>
+            <p>Operador Daibic Ltd.</p>
+            <p>© 2022-2023 DIVIC Corp.</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.js";
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="{% static 'blog/common.js' %}"></script>
+    </body>
+</html>
+ 

@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content_block %}
+<div class="main">
+    {% for blog in data %}
+    <h1>{{ blog.title }}</h1>
+    <h2>{{ blog.content }}</h2>
+    <a href="{% url 'detail' blog.id %}">Detail</a>
+    <a href="{% url 'edit' blog.id %}">Edit</a>
+    <a href="{% url 'delete' blog.id %}">Delete</a>
+    {% endfor %}
+    {% include 'blog/parts/contact_form.html' %}   <!-- Apéndice -->
+</div>
+{% endblock %}

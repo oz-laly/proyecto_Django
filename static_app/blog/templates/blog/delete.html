@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content_block %}
+<h1>Delete Blog</h1>
+<p><strong>Title:</strong> {{ obj.title }}</p>
+<p><strong>Content:</strong> {{ obj.content }}</p>
+<form action="{% url 'delete' id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+<br>
+<a href="{% url 'index' %}">Back</a>
+{% endblock %}

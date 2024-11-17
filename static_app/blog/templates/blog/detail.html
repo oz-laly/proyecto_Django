@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content_block %}
+<p>
+    <strong>Title:</strong>
+    {{ obj.title }}
+</p>
+<p>
+    <strong>Content:</strong>
+    {{ obj.content }}
+</p>
+<a href="{% url 'edit' obj.id %}">Edit</a> |
+<a href="{% url 'index' %}">Back</a>
+{% endblock %}
+ 
+
+</html>
